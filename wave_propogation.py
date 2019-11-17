@@ -46,10 +46,12 @@ for t in range(0, tt-1):
     for n in range(1, nn-2):
         
         '''V Minus '''
-        Vm[n,t] = ((r[n,t]*cp[n,t]*cp[n,t]*e[n,t]-r[n-1,t]*cp[n-1,t]*cp[n-1,t]*e[n-1,t])-r[n-1,t]*cp[n-1,t]*(v[n,t]-v[n-1,t])) /(r[n-1,t]*cp[n-1,t]+r[n,t]*cp[n,t])
+        Vm[n,t] = ((r[n,t]*cp[n,t]*cp[n,t]*e[n,t]-r[n-1,t]*cp[n-1,t]*cp[n-1,t]*e[n-1,t])-r[n-1,t]*
+                   cp[n-1,t]*(v[n,t]-v[n-1,t])) /(r[n-1,t]*cp[n-1,t]+r[n,t]*cp[n,t])
         
         ''' V Plus '''      
-        Vp[n,t]= ((r[n+1,t]*cp[n+1,t]*cp[n+1,t]*e[n+1,t] - r[n,t]*cp[n,t]*cp[n,t]*e[n,t])+r[n+1,t]*cp[n+1,t]*(v[n+1,t]- v[n,t])) / (r[n,t]*cp[n,t]+r[n+1,t]*cp[n+1,t])
+        Vp[n,t]= ((r[n+1,t]*cp[n+1,t]*cp[n+1,t]*e[n+1,t] - r[n,t]*cp[n,t]*cp[n,t]*e[n,t])+r[n+1,t]*
+                  cp[n+1,t]*(v[n+1,t]- v[n,t])) / (r[n,t]*cp[n,t]+r[n+1,t]*cp[n+1,t])
 
     for n in range(0, nn-2):
 
@@ -85,4 +87,3 @@ ax.plot_surface(X, Y, Z, cmap=plt.cm.YlGnBu_r)
 
 # Display plot
 plt.show()
-
